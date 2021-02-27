@@ -26,6 +26,9 @@ function App() {
         <Route path="/supported" exact>
           <Supported />
         </Route>
+        <Route path="/comments" exact>
+          <Comments />
+        </Route>
       </Router>
     </div>
   );

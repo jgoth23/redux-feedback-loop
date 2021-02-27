@@ -20,7 +20,7 @@ const addComments = () => {
     payload: comments
    
   });
-  // history.push('/comments');
+  history.push('/feedback');
   console.log('comments', comments);
 }
   return (
