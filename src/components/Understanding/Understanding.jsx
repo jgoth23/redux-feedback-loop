@@ -20,7 +20,7 @@ const addUnderstanding = () => {
     payload: understanding 
    
   });
-   history.push('/Supported');
+   history.push('/supported');
   console.log('understanding', understanding);
 }
   return (

@@ -20,7 +20,7 @@ const addSupported = () => {
     payload: supported 
    
   });
-  //  history.push('/Supported');
+  history.push('/comments');
   console.log('supported', supported);
 }
   return (

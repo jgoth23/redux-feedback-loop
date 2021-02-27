@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import TodaysFeeling from '../TodaysFeeling/TodaysFeeling';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments';
 
 
 function App() {
