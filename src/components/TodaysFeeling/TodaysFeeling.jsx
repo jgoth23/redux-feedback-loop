@@ -1,13 +1,15 @@
 import React from 'react';
 import {useState} from 'react';
 import { useDispatch } from 'react-redux';
+import {useHistory} from 'react-router-dom';
+
 
 
 function TodaysFeeling () {
 const [feeling, setFeeling] = useState();
 
 const dispatch = useDispatch();
-
+const history = useHistory();
 
 const addFeeling = () => {      
     
@@ -18,6 +20,7 @@ const addFeeling = () => {
     payload: feeling 
    
   });
+  history.push('/understanding');
   console.log('feeling', feeling);
 }
   return (
