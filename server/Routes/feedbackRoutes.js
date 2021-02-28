@@ -12,11 +12,11 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body);
-  const newStudent = req.body.github_name;
-  const sqlText = `INSERT INTO feedback (todaysFeeling, understanding, supported, comments) VALUES ($1), ($2), ($3), ($4)`;
+  console.log('checking status', req.body);
+  const feedback = req.body;
+  const sqlText = `INSERT INTO feedback (feeling, understanding, support, comments) VALUES ($1, $2, $3, $4)`;
 
-  pool.query(sqlText, [feedback])
+  pool.query(sqlText, [feedback.todaysFeeling, feedback.understanding, feedback.supported, feedback.comments])
   .then((result) => {
       res.sendStatus(201);
   })

@@ -1,11 +1,30 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
 function Feedback() {
-  const getFeedback = useSelector((store) => {
-    return store;
+  const history = useHistory();
+
+  const getFeelings = useSelector((store) => {
+    return store.todaysFeelingReducer;
   });
-console.log('get feedback', getFeedback);
+console.log('get feedback');
+
+const getUnderstanding = useSelector((store) => {
+  return store.understandingReducer;
+});
+console.log('get feedback');
+
+const getSupported = useSelector((store) => {
+  return store.supportedReducer;
+});
+console.log('get feedback');
+
+const getComments = useSelector((store) => {
+  return store.commentsReducer;
+});
+console.log('get feedback');
 //history
   
   const onSubmit = () => {
@@ -14,9 +33,14 @@ console.log('get feedback', getFeedback);
     axios({
       method: 'POST',
       url: '/feedback',
-      data: req.body
+      data: {
+        todaysFeeling: getFeelings,
+         understanding: getUnderstanding,
+          supported: getSupported,
+           comments: getComments
+      }
   }).then((response) => {
-    history.push("/feedback");
+    history.push("/");
       console.log(response);
   }).catch((err) => {
       console.log(err);
@@ -32,10 +56,11 @@ console.log('get feedback', getFeedback);
   return (
   <div>
     <h1>Review Your Feedback</h1>
-    <p>Feeling: {getFeedback.todaysFeelingReducer}</p>
-    <p>Understanding: {getFeedback.understanding}</p>
-    <p>Support: {getFeedback.support}</p>
-    <p>Comment: {getFeedback.comment}</p>
+    <p>Feeling: {getFeelings}</p>
+    <p>Understanding: {getUnderstanding}</p>
+    <p>Support: {getSupported}</p>
+    <p>Comment: {getComments}</p>
+    <button onClick={onSubmit}>Submit Feedback</button>
   </div>
   
   )
