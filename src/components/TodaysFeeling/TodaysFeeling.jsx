@@ -11,8 +11,11 @@ const [feeling, setFeeling] = useState();
 const dispatch = useDispatch();
 const history = useHistory();
 
-const addFeeling = () => {      
-    
+const addFeeling = () => { 
+  if (isNaN(feeling)) {     
+  alert('Enter something');
+
+} else {
   dispatch({
     // action.type
     type: 'ADD_FEELING',
@@ -21,6 +24,8 @@ const addFeeling = () => {
    
   });
   history.push('/understanding');
+}
+
   console.log('feeling', feeling);
 }
   return (
