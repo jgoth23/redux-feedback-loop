@@ -3,36 +3,25 @@ import { useSelector } from 'react-redux';
 
 function Feedback() {
   const getFeedback = useSelector((store) => {
-    return store.feedbackReducer;
+    return store;
   });
-
-  const getCustomerInfo = useSelector((store) => {
-    return store.customerInfoReducer;
-  });
-
+console.log('get feedback', getFeedback);
+//history
+  
   const onSubmit = () => {
     console.log('onSubmit()');
 
-    const customerInfo = { getCustomerInfo };
-    const orderInfo = { getOrder };
-
-    axios
-      .post('/api/order', {
-        customer_name: customerInfo.name,
-        street_address: customerInfo.address,
-        city: customerInfo.city,
-        zip: customerInfo.zip,
-        type: customerInfo.deliveryOption,
-        total: '9.99',
-        pizzas: orderInfo, // An array of pizzas
-      })
-      .then((res) => {
-        console.log('CLIENT - POST - a response occurred', res);
-      })
-      .catch((err) => {
-        console.log('CLIENT - POST - an error occurred', err);
-      });
-  };
+    axios({
+      method: 'POST',
+      url: '/feedback',
+      data: req.body
+  }).then((response) => {
+    history.push("/feedback");
+      console.log(response);
+  }).catch((err) => {
+      console.log(err);
+  });
+};
   
   
   
@@ -43,6 +32,10 @@ function Feedback() {
   return (
   <div>
     <h1>Review Your Feedback</h1>
+    <p>Feeling: {getFeedback.todaysFeelingReducer}</p>
+    <p>Understanding: {getFeedback.understanding}</p>
+    <p>Support: {getFeedback.support}</p>
+    <p>Comment: {getFeedback.comment}</p>
   </div>
   
   )
