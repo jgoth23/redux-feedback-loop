@@ -6,27 +6,31 @@ import {useHistory} from 'react-router-dom';
 function Feedback() {
   const history = useHistory();
 
+  // Grabbing `getFeelings` from Redux state
   const getFeelings = useSelector((store) => {
     return store.todaysFeelingReducer;
   });
 console.log('get feedback');
 
+// Grabbing `getUnderstanding` from Redux state
 const getUnderstanding = useSelector((store) => {
   return store.understandingReducer;
 });
 console.log('get feedback');
 
+// Grabbing `getSupported` from Redux state
 const getSupported = useSelector((store) => {
   return store.supportedReducer;
 });
 console.log('get feedback');
 
+// Grabbing `getComments` from Redux state
 const getComments = useSelector((store) => {
   return store.commentsReducer;
 });
 console.log('get feedback');
-//history
-  
+
+ // Called when submit button is clicked 
   const onSubmit = () => {
     console.log('onSubmit()');
 
@@ -40,7 +44,7 @@ console.log('get feedback');
            comments: getComments
       }
   }).then((response) => {
-    history.push("/newFeedback");
+    history.push("/newFeedback"); //Back to start of survey
       console.log(response);
   }).catch((err) => {
       console.log(err);

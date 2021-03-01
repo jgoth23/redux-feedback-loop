@@ -6,7 +6,7 @@ function NewFeedback () {
   const history = useHistory();
 
   const nextPage = () => {
-    history.push('/');
+    history.push('/'); // Back to main page
   }
   
   return (
