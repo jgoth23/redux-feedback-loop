@@ -40,7 +40,7 @@ console.log('get feedback');
            comments: getComments
       }
   }).then((response) => {
-    history.push("/");
+    history.push("/newFeedback");
       console.log(response);
   }).catch((err) => {
       console.log(err);

@@ -11,7 +11,10 @@ const [understanding, setUnderstanding] = useState();
 const dispatch = useDispatch();
 const history = useHistory();
 
-const addUnderstanding = () => {      
+const addUnderstanding = () => { 
+  if (isNaN(understanding)) {
+    alert('Enter something');
+  } else {  
     
   dispatch({
     // action.type
@@ -21,6 +24,7 @@ const addUnderstanding = () => {
    
   });
    history.push('/supported');
+}
   console.log('understanding', understanding);
 }
   return (
