@@ -37,7 +37,7 @@ function TodaysFeeling() {
           setFeeling(e.target.value);
         }}
       ></input>
-      <Button variant="outlined" color="primary" onClick={addFeeling}>Next</Button>
+      <Button size="large" variant="outlined" color="primary" onClick={addFeeling}>Next</Button>
     </div>
   );
 }

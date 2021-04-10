@@ -62,7 +62,7 @@ function Feedback() {
       <p>Understanding: {getUnderstanding}</p>
       <p>Support: {getSupported}</p>
       <p>Comment: {getComments}</p>
-      <Button variant="outlined" color="primary" onClick={onSubmit}>Submit Feedback</Button>
+      <Button size="large" variant="outlined" color="primary" onClick={onSubmit}>Submit Feedback</Button>
     </div>
   );
 }

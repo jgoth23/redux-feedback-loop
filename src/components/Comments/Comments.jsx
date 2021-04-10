@@ -33,7 +33,7 @@ function Comments() {
           setComments(e.target.value);
         }}
       ></input>
-      <Button onClick={addComments}>Next</Button>
+      <Button size="large" variant="outlined" color="primary" onClick={addComments}>Next</Button>
     </div>
   );
 }

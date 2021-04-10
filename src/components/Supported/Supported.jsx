@@ -37,7 +37,7 @@ function Supported() {
           setSupported(e.target.value);
         }}
       ></input>
-      <Button onClick={addSupported}>Next</Button>
+      <Button size="large" variant="outlined" color="primary" onClick={addSupported}>Next</Button>
     </div>
   );
 }

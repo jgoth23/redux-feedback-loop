@@ -37,7 +37,7 @@ function Understanding() {
           setUnderstanding(e.target.value);
         }}
       ></input>
-      <Button onClick={addUnderstanding}>Next</Button>
+      <Button size="large" variant="outlined" color="primary" onClick={addUnderstanding}>Next</Button>
     </div>
   );
 }
