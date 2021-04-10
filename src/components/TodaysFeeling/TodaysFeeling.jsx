@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 function TodaysFeeling() {
   const [feeling, setFeeling] = useState();
@@ -29,14 +30,14 @@ function TodaysFeeling() {
     <div>
       <h1>How are you feeling today?</h1>
       <p>Feeling?</p>
-      <input
+      <TextField
         type="number"
         min="0"
         max="5"
         onChange={(e) => {
           setFeeling(e.target.value);
         }}
-      ></input>
+      ></TextField>
       <Button size="large" variant="outlined" color="primary" onClick={addFeeling}>Next</Button>
     </div>
   );
