@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+
 
 function Comments() {
   const [comments, setComments] = useState();
@@ -31,7 +33,7 @@ function Comments() {
           setComments(e.target.value);
         }}
       ></input>
-      <button onClick={addComments}>Next</button>
+      <Button onClick={addComments}>Next</Button>
     </div>
   );
 }

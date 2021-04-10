@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+
 
 function Supported() {
   const [supported, setSupported] = useState();
@@ -35,7 +37,7 @@ function Supported() {
           setSupported(e.target.value);
         }}
       ></input>
-      <button onClick={addSupported}>Next</button>
+      <Button onClick={addSupported}>Next</Button>
     </div>
   );
 }
