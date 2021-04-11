@@ -1,10 +1,9 @@
 # Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Feedback loop
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+In this project I mimicked the everyday feedback forum we would submit after class. Each view allows an input scaling from 0 to 5 based upon how the day went and a spot for leaving a comment about the day. At the end on the loop there is a final review of all the inputs before committing the final feedback. 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 

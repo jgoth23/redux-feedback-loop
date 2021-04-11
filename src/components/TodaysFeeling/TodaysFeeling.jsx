@@ -29,8 +29,10 @@ function TodaysFeeling() {
   return (
     <div>
       <h1>How are you feeling today?</h1>
-      <p>Feeling?</p>
+      
       <TextField
+      className="input"
+      variant="outlined"
         type="number"
         min="0"
         max="5"
@@ -38,7 +40,9 @@ function TodaysFeeling() {
           setFeeling(e.target.value);
         }}
       ></TextField>
-      <Button size="large" variant="outlined" color="primary" onClick={addFeeling}>Next</Button>
+      <div>
+      <Button className="ui-button" size="large" variant="outlined" color="primary" onClick={addFeeling}>Next</Button>
+      </div>
     </div>
   );
 }

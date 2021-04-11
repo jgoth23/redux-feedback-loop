@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 
 function Comments() {
@@ -26,14 +28,17 @@ function Comments() {
     <div>
       <h1>Any comments you want to leave?</h1>
       <p>Comments</p>
-      <input
+      <TextField
+      variant="outlined"
         type="text"
         placeholder="comments"
         onChange={(e) => {
           setComments(e.target.value);
         }}
-      ></input>
+      ></TextField>
+      <div>
       <Button size="large" variant="outlined" color="primary" onClick={addComments}>Next</Button>
+      </div>
     </div>
   );
 }

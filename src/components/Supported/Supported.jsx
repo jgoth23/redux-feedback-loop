@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 
 function Supported() {
@@ -29,15 +31,18 @@ function Supported() {
     <div>
       <h1>How well are you being supported?</h1>
       <p>Supported?</p>
-      <input
+      <TextField
+      variant="outlined"
         type="number"
         min="0"
         max="5"
         onChange={(e) => {
           setSupported(e.target.value);
         }}
-      ></input>
-      <Button size="large" variant="outlined" color="primary" onClick={addSupported}>Next</Button>
+      ></TextField>
+      <div>
+      <Button variant="outlined" color="primary" onClick={addSupported}>Next</Button>
+      </div>
     </div>
   );
 }

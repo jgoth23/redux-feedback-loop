@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 
 function Understanding() {
@@ -29,15 +31,18 @@ function Understanding() {
     <div>
       <h1>How well are you understanding the content?</h1>
       <p>Understanding?</p>
-      <input
+      <TextField
+      variant="outlined"
         type="number"
         min="0"
         max="5"
         onChange={(e) => {
           setUnderstanding(e.target.value);
         }}
-      ></input>
+      ></TextField>
+      <div>
       <Button size="large" variant="outlined" color="primary" onClick={addUnderstanding}>Next</Button>
+      </div>
     </div>
   );
 }
